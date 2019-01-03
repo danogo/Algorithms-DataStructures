@@ -12,6 +12,11 @@ const convertInputToArr = input => {
   return input.split('\r\n');
 }
 
+
+const inputString = getInputFromTxt('./input.txt');
+const inputArr = convertInputToArr(inputString);
+
+// Solution 1
 const extractDataFromString = string => {
   const boxData = string.replace(/\D/g, ' ').split(' ');
   return {
@@ -65,7 +70,10 @@ const findNonOverlapping = boxes => {
   }
 }
 
-const inputString = getInputFromTxt('./input.txt');
-const inputArr = convertInputToArr(inputString);
-const boxes = getBoxes(inputArr);
-console.log(findNonOverlapping(boxes));
+// const inputString = getInputFromTxt('./input.txt');
+// const inputArr = convertInputToArr(inputString);
+// const boxes = getBoxes(inputArr);
+// console.log(findNonOverlapping(boxes));
+
+
+// Solution 2
