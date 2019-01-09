@@ -24,13 +24,10 @@ const convertInputToMap = input => {
   return steps;
 }
 
-
 const arrangeSteps = input => {
   const steps = convertInputToMap(input);
-  let available = findFirstAvailable(steps);
-  let current = available.shift(); 
-  steps.delete(current);
-  const order = new Set(current);
+  let available = [];
+  const order = new Set();
   let result = '';
 
   while (steps.size > 0) {
@@ -67,22 +64,5 @@ const arrangeSteps = input => {
 
   return result;
 }
-
-
-const findFirstAvailable = steps => {
-  const available = [];
-
-  for (let [key, value] of steps) {
-    if (value.length === 0) {
-      available.push(key);
-    }
-  }
-
-  available.sort((a, b) => a.localeCompare(b));
-  return available;
-}
-
-
-
 
 console.log(arrangeSteps(input));
